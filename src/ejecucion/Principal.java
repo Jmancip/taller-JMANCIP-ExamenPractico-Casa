@@ -2,7 +2,9 @@ package ejecucion;
 
 import utilidades.Validaciones;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
@@ -12,6 +14,8 @@ public class Principal {
         //System.out.println(file);
         System.out.println(file.exists());  // Validar si existe el archivo en la ruta se comporta como un booleano tru o false
 
+        String ruta = "D:\\workspaceintellij2024\\ProyectoFinalTienda\\";
+        String nombreArchivo = "productos.txt";
         Scanner scannerMenu = new Scanner(System.in);
         int opcionprincipal;
 
@@ -89,6 +93,22 @@ public class Principal {
                     System.out.println("** (suma de precios * cantidades).                                         **");
                     System.out.println("*****************************************************************************");
                     System.out.println("**              Aca esta tu reporte                                        **");
+                    System.out.println("**                                                                         **");
+                    //Clase   Como extraer datos
+
+                    try (FileReader fr = new FileReader(ruta + nombreArchivo)) {
+                        //Clase para leer el contenido
+                        BufferedReader br = new BufferedReader(fr);
+                        String linea;
+
+                        while ((linea = br.readLine()) != null) {
+                            System.out.println(linea);
+                        }
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                    System.out.println("**                                                                         **");
+                    System.out.println("*****************************************************************************");
                     System.out.println("\uD83D\uDE0E Para continuar presione la tecla enter \uD83D\uDDB1\uFE0F \n ");
                     scannerMenu.nextLine(); // Captura el salto de línea restante
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
@@ -125,6 +145,7 @@ public class Principal {
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
 
                     break;
+
 
 
             }
