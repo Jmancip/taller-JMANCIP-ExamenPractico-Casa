@@ -17,7 +17,7 @@ public class Main {
         System.out.println("*****************************************************************************");
 
         // opción del usuario
-        System.out.println(" \uD83D\uDC49  ｄｉｇｉｔｅ  ｕｎａ   ｏｐｃｉÓｎ  ｄｅｌ  ｍｅｎｕ  \uD83D\uDC48 ");
+        System.out.println("**   \uD83D\uDC49  ｄｉｇｉｔｅ  ｕｎａ   ｏｐｃｉÓｎ  ｄｅｌ  ｍｅｎｕ  \uD83D\uDC48     **");
 
     }
 

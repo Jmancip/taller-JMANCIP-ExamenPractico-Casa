@@ -1,22 +1,46 @@
 package ejecucion;
 
+import menu.Inventario;
+import menu.Main;
+import menu.Producto;
 import utilidades.Validaciones;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.sql.SQLOutput;
+import java.io.IOException;
 import java.util.Scanner;
+
+import static utilidades.Validaciones.*;
 
 public class Principal {
     public static void main(String[] args) {
-        File file = new File("D:\\workspaceintellij2024\\ProyectoFinalTienda\\productos.txt"); // la ruta debe ir con: / ó \\\\
+
+
+        Inventario inventario;
+        inventario = new Inventario();
+        Scanner scannerMenu = new Scanner(System.in);
+
+
+
+
+        /*File file = new File("D:\\workspaceintellij2024\\ProyectoFinalTienda\\productos.txt"); // la ruta debe ir con: / ó \\\\
         //System.out.println(file);
         System.out.println(file.exists());  // Validar si existe el archivo en la ruta se comporta como un booleano tru o false
 
         String ruta = "D:\\workspaceintellij2024\\ProyectoFinalTienda\\";
-        String nombreArchivo = "productos.txt";
+        String archivoProductos = "productos.txt";
         Scanner scannerMenu = new Scanner(System.in);
+
+        //cargar productos al inicar el programa
+        try {
+            inventario.cargarProductos(archivoProductos);
+            System.out.println("productos cargados exitosamente");
+        } catch (IOException e) {
+            System.out.println("Error al cargar el archivo de productos" + e.getMessage());
+        }
+*/
+
         int opcionprincipal;
 
         do {
@@ -34,27 +58,16 @@ public class Principal {
             switch (opcionprincipal) {
                 // Opcion menu Agregar Productos
                 case 1:
-                    System.out.println("*****************************************************************************");
-                    System.out.println("**                     Agregar Producto                                    **");
-                    System.out.println("*****************************************************************************");
-                    System.out.println("**           Permite añadir un nuevo producto al inventario                **");
-                    System.out.println("**              Diligencie la información que va a agregar                 **");
-                    System.out.println("\uD83D\uDE0E Para continuar presione la tecla enter \uD83D\uDDB1\uFE0F \n ");
+                    Inventario.agregarProducto();
+
+                    System.out.println("**              \uD83D\uDE0E Para continuar presione la tecla enter \uD83D\uDDB1\uFE0F              **\n");
                     scannerMenu.nextLine(); // Captura el salto de línea restante
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
                     break;
 
                 // Opcion menu Actualizar producto
                 case 2:
-                    System.out.println("*****************************************************************************");
-                    System.out.println("**                    Actualizar producto                                  **");
-                    System.out.println("*****************************************************************************");
-                    System.out.println("**           Permite modificar los datos de un producto existente          **");
-                    System.out.println("**              Diligencie la información que va a modificar               **");
-                    System.out.println("*****************************************************************************");
-                    System.out.println("\uD83D\uDE0E Para continuar presione la tecla enter \uD83D\uDDB1\uFE0F \n ");
-                    scannerMenu.nextLine(); // Captura el salto de línea restante
-                    scannerMenu.nextLine(); // Espera a que el usuario presione Enter
+                //    Inventario.actualizarProducto();
                     break;
 
                 // Opcion menu Eliminar producto
@@ -84,7 +97,7 @@ public class Principal {
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
                     break;
                 // Opcion menu Generar reporte
-                case 5:
+                /*case 5:
                     System.out.println("*****************************************************************************");
                     System.out.println("**                         Generar reporte                                 **");
                     System.out.println("*****************************************************************************");
@@ -113,6 +126,8 @@ public class Principal {
                     scannerMenu.nextLine(); // Captura el salto de línea restante
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
                     break;
+
+                 */
 
                 // Opcion menu Cantidad de productos por categoria
                 case 6:
@@ -145,7 +160,6 @@ public class Principal {
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
 
                     break;
-
 
 
             }
