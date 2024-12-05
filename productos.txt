@@ -1,3 +1,8 @@
-1,arroz,granos,1000.00,222,frijol,granos,1500.00,133,lentejas,granos,900.00,154,pechuga,proteina,4500.00,85,costilla,proteina,6300.00,56,salmon,proteina,7000.00,67,tomate,verduras,300.00,258,cebolla,verduras,400.00,329,platano,verduras,800.00,1310,bombombun,confites,100.00,4511,papas fritas,confites,4572.0,55
-11,papas fritas,confites,4572.0,55
-12,masmelos,confites,6789.0,88
+2,carne asar,frios,8777.0,44
+3,pechuga,nevera,8700.0,33
+1,cuadernos,miscelania,4500.0,44
+2,sal,mercado,5600.0,55
+3,pechuga,nevera,8700.0,33
+1,sal marina,mercado,5601.0,33
+4,papas fritas,galgerias,4501.0,44
+1,cafe,mercado,2333.0,66

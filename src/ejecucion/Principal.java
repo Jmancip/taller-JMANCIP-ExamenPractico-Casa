@@ -24,11 +24,11 @@ public class Principal {
 
 
 
-        /*File file = new File("D:\\workspaceintellij2024\\ProyectoFinalTienda\\productos.txt"); // la ruta debe ir con: / ó \\\\
+        File file = new File("D:\\workspaceintellij2024\\ProyectoFinalTienda\\productos.txt"); // la ruta debe ir con: / ó \\\\
         //System.out.println(file);
         System.out.println(file.exists());  // Validar si existe el archivo en la ruta se comporta como un booleano tru o false
 
-        String ruta = "D:\\workspaceintellij2024\\ProyectoFinalTienda\\";
+        /*String ruta = "D:\\workspaceintellij2024\\ProyectoFinalTienda\\";
         String archivoProductos = "productos.txt";
         Scanner scannerMenu = new Scanner(System.in);
 
@@ -38,8 +38,8 @@ public class Principal {
             System.out.println("productos cargados exitosamente");
         } catch (IOException e) {
             System.out.println("Error al cargar el archivo de productos" + e.getMessage());
-        }
-*/
+        }*/
+
 
         int opcionprincipal;
 
@@ -67,17 +67,17 @@ public class Principal {
 
                 // Opcion menu Actualizar producto
                 case 2:
-                //    Inventario.actualizarProducto();
+                    Inventario.actualizarProducto();
+
+                    System.out.println("**              \uD83D\uDE0E Para continuar presione la tecla enter \uD83D\uDDB1\uFE0F              **\n");
+                    scannerMenu.nextLine(); // Captura el salto de línea restante
+                    scannerMenu.nextLine(); // Espera a que el usuario presione Enter
                     break;
 
                 // Opcion menu Eliminar producto
                 case 3:
-                    System.out.println("*****************************************************************************");
-                    System.out.println("**                    Eliminar producto                                    **");
-                    System.out.println("*****************************************************************************");
-                    System.out.println("**              Permite eliminar un producto del inventario.               **");
-                    System.out.println("**               el producto  que va a eliminar  es                        **");
-                    System.out.println("*****************************************************************************");
+                    Inventario.eliminarProducto();
+
                     System.out.println("\uD83D\uDE0E Para continuar presione la tecla enter \uD83D\uDDB1\uFE0F \n ");
                     scannerMenu.nextLine(); // Captura el salto de línea restante
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
