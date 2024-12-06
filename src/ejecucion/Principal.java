@@ -54,7 +54,7 @@ public class Principal {
                     scannerMenu.nextLine(); // Captura el salto de línea restante
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
                     break;
-/*
+
                 // Opcion menu Eliminar producto
                 case 3:
                     Inventario.eliminarProducto();
@@ -63,20 +63,17 @@ public class Principal {
                     scannerMenu.nextLine(); // Captura el salto de línea restante
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
                     break;
-*/
+
                 // Opcion menu Buscar por categoría
                 case 4:
-                    System.out.println("*****************************************************************************");
-                    System.out.println("**                    Buscar por categoría                                 **");
-                    System.out.println("*****************************************************************************");
-                    System.out.println("** Buscar Producto por Categoría, Nombre e ID del Producto: Filtra y       **");
-                    System.out.println("**      muestra los productos de una categoría específica.                 **");
-                    System.out.println("*****************************************************************************");
-                    System.out.println("**               el producto  que va a Buscar  es                          **");
+                    Inventario.buscarCategoria();
                     System.out.println("\uD83D\uDE0E Para continuar presione la tecla enter \uD83D\uDDB1\uFE0F \n ");
                     scannerMenu.nextLine(); // Captura el salto de línea restante
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
+
                     break;
+
+/*
                 // Opcion menu Generar reporte
                 /*case 5:
                     System.out.println("*****************************************************************************");
@@ -107,8 +104,7 @@ public class Principal {
                     scannerMenu.nextLine(); // Captura el salto de línea restante
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
                     break;
-
-                 */
+*/
 
                 // Opcion menu Cantidad de productos por categoria
                 case 6:

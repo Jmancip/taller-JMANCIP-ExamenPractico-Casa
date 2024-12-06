@@ -1,3 +1,2 @@
-1,papas fritas,confites,4500.0,50
-2,pechuga,frios,8900.0,33
-3,pirulito,confites,700.0,33
+2,tomate,verdura,800.0,29
+3,gaseosa,bebidas,5100.0,34

@@ -136,24 +136,21 @@ public class Inventario {
                 //Actualizar archivo
                 escribirInventario(productosActualizar);
             } else {
-                System.out.println("**          Ese Producto no esta en el inventario               **");
+                System.out.println("**           Ese id del Producto no esta en el inventario                 **");
             }
         } catch (NumberFormatException e) {
-            System.out.println("**          El ID ingresado no es un número valido          **");
+            System.out.println("**              El ID ingresado no es un número valido                          **");
         }
     }
 
     public static void escribirInventario(List<Producto> listaProducto) {
-           //BufferedWriter: Escribir el texto al archivo
-                                                         //FileWriter: Abrir archivo
+        //BufferedWriter: Escribir el texto al archivo
+        //FileWriter: Abrir archivo
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivoProductos))) {
             // Escribir una línea por cada producto en el ArrayList
             for (Producto producto1 : listaProducto) {
-                // Escribir los campos separados por comas (puedes cambiar el delimitador si es necesario)
-                // Se crea el String.valueOf para que se pueda leer cada tipo de dato de las variables
-
-                           //String.join: Combina los atributos del producto en una sola línea
-                                                    // String.valueOf: lee cada tipo de dato de las variables
+                //String.join: Combina los atributos del producto en una sola línea
+                // String.valueOf: lee cada tipo de dato de las variables
                 writer.write(String.join(",", String.valueOf(producto1.getIdProducto()),
                         producto1.getNombreProducto(), producto1.getCategoria(),
                         String.valueOf(producto1.getPrecio()), String.valueOf(producto1.getCantidadDisponible())));
@@ -168,7 +165,71 @@ public class Inventario {
     }
 
 
+    // Eliminar producto opción 3 del menú
+    public static void eliminarProducto() {
+        List<Producto> listaProductos = Inventario.lecturaProduct();
+        try {
+            Scanner scanId = new Scanner(System.in);
+            System.out.println("*****************************************************************************");
+            System.out.println("**              \uD83D\uDC49   Ingrese el ID del producto a eliminar:                **");
+            int productoEliminar = Integer.parseInt(scanId.nextLine());
+            System.out.println("**               Se elimino con exito el registro                          **");
 
+            boolean existe = false;
+            for (Producto producto : listaProductos) {
+                if (productoEliminar == producto.getIdProducto()) {
+                    listaProductos.remove(producto);
+                    existe = true;
+                    break;
+                }
+            }
+
+            if (existe) {
+                //Actualizar archivo
+                escribirInventario(listaProductos);
+
+            } else {
+                System.out.println("**           Ese id del Producto no esta en el inventario                 **");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("**              El ID ingresado no es un número valido                          **");
+        }
+    }
+
+    // buscar Categoria opción 4 del menú
+
+    public static void buscarCategoria(){
+        List<Producto> listaProductos = Inventario.lecturaProduct();
+        try{
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("*****************************************************************************");
+            System.out.println("**                    Buscar por categoría                                 **");
+            System.out.println("*****************************************************************************");
+            System.out.println("**               el producto  que va a Buscar  es                          **");
+
+            String categoria = scanner.nextLine();
+            List<Producto> productos1 = Inventario.lecturaProduct();
+            List<Producto>productosXCategoria = new ArrayList<>();
+
+            for (Producto producto : productos1){
+                if (producto.getCategoria().equalsIgnoreCase(categoria)){
+                    productosXCategoria.add(producto);
+               }
+            }
+            if  (!productosXCategoria.isEmpty()) {
+                System.out.println("Id\tNombreProducto\tCategoria\tPrecio\tCantidad Disponible");
+                for (Producto producto : productosXCategoria ) {
+                    System.out.println(producto.getIdProducto() + "\t\t\t\t" + producto.getNombreProducto() + "\t\t\t\t" + producto.getCategoria() + "\t\t\t\t" + producto.getPrecio() + "\t\t\t" + producto.getCantidadDisponible());
+                    System.out.println("*****************************************************************************");
+                }
+            } else {
+                System.out.println("No existen productos asociados a esa categoria");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Intenta nuevamente ");
+        }
+
+    }
 }
 
 
