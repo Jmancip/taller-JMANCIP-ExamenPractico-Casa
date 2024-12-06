@@ -81,24 +81,18 @@ public class Principal {
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
                     break;
 
-/*
                 // Opcion menu Cantidad de productos por categoria
                 case 6:
-                    System.out.println("*****************************************************************************");
-                    System.out.println("**              Cantidad de productos por categoria                        **");
-                    System.out.println("*****************************************************************************");
-                    System.out.println("**   Calcular Cantidad de Productos:                                       **");
-                    System.out.println("**   Permite conocer la cantidad de productos por categoria                **");
-                    System.out.println("**                                                                         **");
-                    System.out.println("*****************************************************************************");
-                    System.out.println("**              esta es la cantidad de productos                           **");
+                    Inventario.categoria();
+
                     System.out.println("\uD83D\uDE0E Para continuar presione la tecla enter \uD83D\uDDB1\uFE0F \n ");
                     scannerMenu.nextLine(); // Captura el salto de línea restante
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
+
                     break;
 
 
- */
+
                 // Opcion menu Producto más caro
                 case 7:
                     Inventario.productoCostoso();

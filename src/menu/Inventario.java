@@ -1,9 +1,7 @@
 package menu;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Inventario {
     public static List<Producto> productos = new ArrayList<>();
@@ -284,6 +282,39 @@ public class Inventario {
         }
     }
 
+    // Categoria  opcion 6 del menu
+    public static void categoria() {
+        // HashMap se utiliza para almacenar la info de la categoria (llave, valor)
+        System.out.println("*****************************************************************************");
+        System.out.println("**              Cantidad de productos por categoría                        **");
+        System.out.println("*****************************************************************************");
+        System.out.println("**   Calcular Cantidad de Productos:                                       **");
+        System.out.println("**   Permite conocer la cantidad de productos por categoria                **");
+        System.out.println("**              esta es la cantidad de productos                           **");
+        System.out.println("*                                                                 *");
+        Map<String, Integer> categoriaTotal = new HashMap<>();
+        try (BufferedReader leerCantProd = new BufferedReader(new FileReader(archivoProductos))) {
+            String linea;
+            while ((linea = leerCantProd.readLine()) != null) {
+                String[] campos = linea.split(";");
+                String categoria = campos[2];
+                int cantidadDisponible = Integer.parseInt(campos[4]);
+                // el metodo getOrDefault se usa para dar un valor cuando las claves son ausentes
+                categoriaTotal.put(categoria, categoriaTotal.getOrDefault(categoria, 0) + cantidadDisponible);
+
+            }
+        } catch (IOException e) {
+            //muestra con exactitud en donde esta el error de codigo
+            e.printStackTrace();
+
+        }
+        for (Map.Entry<String, Integer> entry : categoriaTotal.entrySet()) {
+            System.out.println("Categoria " + entry.getKey() + " Total productos por categoria: " + entry.getValue());
+        }
+        System.out.println("*                                                                 *");
+        System.out.println("*******************************************************************");
+
+    }
 
     // Producto más caro opción 7 del menú
     public static void productoCostoso() {
@@ -299,15 +330,15 @@ public class Inventario {
 
         Producto costoso = null;
         double valorCostoso = Double.MIN_VALUE;
-        for (Producto producto: productoCaro){
-            if (producto.getPrecio() > valorCostoso){
+        for (Producto producto : productoCaro) {
+            if (producto.getPrecio() > valorCostoso) {
                 valorCostoso = producto.getPrecio();
-               costoso = producto;
+                costoso = producto;
             }
         }
-         if(costoso != null) {
-             System.out.println("**  El producto mas costoso en la tieda es \uD83D\uDC49: " + costoso.getNombreProducto() +                 "                   **");
-             System.out.println("**  con un valor de $ "  + valorCostoso +         "                                               **");
+        if (costoso != null) {
+            System.out.println("**  El producto mas costoso en la tieda es \uD83D\uDC49: " + costoso.getNombreProducto() + "                   **");
+            System.out.println("**  con un valor de $ " + valorCostoso + "                                               **");
         }
         System.out.println("*****************************************************************************");
     }
