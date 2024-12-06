@@ -1,8 +1,3 @@
-2,carne asar,frios,8777.0,44
-3,pechuga,nevera,8700.0,33
-1,cuadernos,miscelania,4500.0,44
-2,sal,mercado,5600.0,55
-3,pechuga,nevera,8700.0,33
-1,sal marina,mercado,5601.0,33
-4,papas fritas,galgerias,4501.0,44
-1,cafe,mercado,2333.0,66
+1,papas fritas,confites,4500.0,50
+2,pechuga,frios,8900.0,33
+3,pirulito,confites,700.0,33

@@ -58,11 +58,5 @@ public class Producto {
     public void setCantidadDisponible(int cantidadDisponible) {
         this.cantidadDisponible = cantidadDisponible;
     }
-    public void producto() {
-        System.out.println("idProducto: " + idProducto);
-        System.out.println("Nombre Producto: " + nombreProducto);
-        System.out.println("Categoria: " + categoria);
-        System.out.println("Precio: " + precio);
-        System.out.println("Cantidad Disponible" + cantidadDisponible);
-    }
+
 }

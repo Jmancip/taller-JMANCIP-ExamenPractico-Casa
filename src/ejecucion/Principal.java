@@ -16,30 +16,11 @@ import static utilidades.Validaciones.*;
 public class Principal {
     public static void main(String[] args) {
 
-
-        Inventario inventario;
-        inventario = new Inventario();
         Scanner scannerMenu = new Scanner(System.in);
-
-
-
 
         File file = new File("D:\\workspaceintellij2024\\ProyectoFinalTienda\\productos.txt"); // la ruta debe ir con: / ó \\\\
         //System.out.println(file);
         System.out.println(file.exists());  // Validar si existe el archivo en la ruta se comporta como un booleano tru o false
-
-        /*String ruta = "D:\\workspaceintellij2024\\ProyectoFinalTienda\\";
-        String archivoProductos = "productos.txt";
-        Scanner scannerMenu = new Scanner(System.in);
-
-        //cargar productos al inicar el programa
-        try {
-            inventario.cargarProductos(archivoProductos);
-            System.out.println("productos cargados exitosamente");
-        } catch (IOException e) {
-            System.out.println("Error al cargar el archivo de productos" + e.getMessage());
-        }*/
-
 
         int opcionprincipal;
 
@@ -73,7 +54,7 @@ public class Principal {
                     scannerMenu.nextLine(); // Captura el salto de línea restante
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
                     break;
-
+/*
                 // Opcion menu Eliminar producto
                 case 3:
                     Inventario.eliminarProducto();
@@ -82,7 +63,7 @@ public class Principal {
                     scannerMenu.nextLine(); // Captura el salto de línea restante
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
                     break;
-
+*/
                 // Opcion menu Buscar por categoría
                 case 4:
                     System.out.println("*****************************************************************************");
@@ -158,11 +139,9 @@ public class Principal {
                     System.out.println("\uD83D\uDE0E Para continuar presione la tecla enter \uD83D\uDDB1\uFE0F \n ");
                     scannerMenu.nextLine(); // Captura el salto de línea restante
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
-
                     break;
-
-
             }
+
         } while (opcionprincipal != 8);
         System.out.println(" \uD83D\uDE0E Saliendo...\uD83D\uDDB1\uFE0F  ");
         System.out.println("   \uD83D\uDC4B\uD83C\uDFFC ＨＡＳＴＡ  ＰＲＯＮＴＯ \uD83D\uDC4B\uD83C\uDFFC ");

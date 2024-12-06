@@ -6,6 +6,12 @@ public class Main {
     //se crea el metodo
     public static void menuPrincipal() {
         System.out.println("*****************************************************************************");
+        System.out.println("\n" +
+                "░░░▒█ ▒█░▒█ ▒█░░░ ▀█▀ ░█▀▀█ ▒█▄░▒█ 　 ▒█▀▄▀█ ░█▀▀█ ▒█▄░▒█ ▒█▀▀█ ▀█▀ ▒█▀▀█ ▒█▀▀▀ \n" +
+                "░▄░▒█ ▒█░▒█ ▒█░░░ ▒█░ ▒█▄▄█ ▒█▒█▒█ 　 ▒█▒█▒█ ▒█▄▄█ ▒█▒█▒█ ▒█░░░ ▒█░ ▒█▄▄█ ▒█▀▀▀ \n" +
+                "▒█▄▄█ ░▀▄▄▀ ▒█▄▄█ ▄█▄ ▒█░▒█ ▒█░░▀█ 　 ▒█░░▒█ ▒█░▒█ ▒█░░▀█ ▒█▄▄█ ▄█▄ ▒█░░░ ▒█▄▄▄ \n" +
+                "\n");
+        System.out.println("*****************************************************************************");
         System.out.println("**            1- Agregar producto                                          **");
         System.out.println("**            2- Actualizar producto                                       **");
         System.out.println("**            3- Eliminar producto                                         **");
