@@ -6,6 +6,7 @@ public class Main {
     //se crea el metodo
     public static void menuPrincipal() {
         System.out.println("*****************************************************************************");
+        System.out.println("  ▀▄▀▄▀▄▀▄▀▄▀▄ \uD83E\uDD59\uD83E\uDD61\uD83C\uDF56 ᆞTᆞᆞiᆞᆞeᆞᆞnᆞᆞdᆞᆞaᆞ \uD83C\uDF55\uD83C\uDF5F\uD83E\uDD6A  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀  ");
         System.out.println("\n" +
                 "░░░▒█ ▒█░▒█ ▒█░░░ ▀█▀ ░█▀▀█ ▒█▄░▒█ 　 ▒█▀▄▀█ ░█▀▀█ ▒█▄░▒█ ▒█▀▀█ ▀█▀ ▒█▀▀█ ▒█▀▀▀ \n" +
                 "░▄░▒█ ▒█░▒█ ▒█░░░ ▒█░ ▒█▄▄█ ▒█▒█▒█ 　 ▒█▒█▒█ ▒█▄▄█ ▒█▒█▒█ ▒█░░░ ▒█░ ▒█▄▄█ ▒█▀▀▀ \n" +
