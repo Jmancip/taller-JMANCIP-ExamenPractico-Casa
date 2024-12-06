@@ -199,9 +199,9 @@ public class Inventario {
     }
 
     // buscar Categoria opción 4 del menú
-    public static void buscarCategoria(){
+    public static void buscarCategoria() {
 
-        try{
+        try {
             Scanner scanner = new Scanner(System.in);
             System.out.println("*****************************************************************************");
             System.out.println("**                    Buscar por categoría                                 **");
@@ -212,17 +212,17 @@ public class Inventario {
 
             String categoria = scanner.nextLine();
             List<Producto> productos1 = Inventario.lecturaProduct();
-            List<Producto>productosXCategoria = new ArrayList<>();
+            List<Producto> productosXCategoria = new ArrayList<>();
 
-            for (Producto producto : productos1){
-                if (producto.getCategoria().equalsIgnoreCase(categoria)){
+            for (Producto producto : productos1) {
+                if (producto.getCategoria().equalsIgnoreCase(categoria)) {
                     productosXCategoria.add(producto);
-               }
+                }
             }
-            if  (!productosXCategoria.isEmpty()) {
+            if (!productosXCategoria.isEmpty()) {
                 System.out.println("** Esto es lo que hay en la tienda :                                      **");
                 System.out.println(" Id\tProducto\tCategoria\tPrecio\tCantidad Disponible ");
-                for (Producto producto : productosXCategoria ) {
+                for (Producto producto : productosXCategoria) {
                     System.out.println(producto.getIdProducto() + "\t\t\t\t" + producto.getNombreProducto() + "\t\t\t\t" + producto.getCategoria() + "\t\t\t\t" + producto.getPrecio() + "\t\t\t" + producto.getCantidadDisponible());
                     System.out.println("*****************************************************************************");
                 }
@@ -235,8 +235,7 @@ public class Inventario {
     }
 
     // Generar reporte opción 5 del menú
-
-    public static void generarReporte(){
+    public static void generarReporte() {
 
         final String reporte;
         reporte = "D:\\workspaceintellij2024\\ProyectoFinalTienda\\reporte_inventario.txt";
@@ -275,7 +274,7 @@ public class Inventario {
             writer.write("Valor total del inventario en la tienda es \uD83D\uDC49 $  " + valor);
 
             System.out.println("**          \uD83D\uDC49   El reporte se encuentra en la ruta:                       **");
-            System.out.println("**   " + reporte +                                                          "   **");
+            System.out.println("**   " + reporte + "   **");
 
             System.out.println("**                      Archivo creado con éxito.                          **");
             System.out.println("*****************************************************************************");
@@ -284,6 +283,36 @@ public class Inventario {
             System.err.println("Error al escribir en el archivo: " + e.getMessage());
         }
     }
+
+
+    // Producto más caro opción 7 del menú
+    public static void productoCostoso() {
+
+        System.out.println("*****************************************************************************");
+        System.out.println("**                      Producto más caro                                  **");
+        System.out.println("*****************************************************************************");
+        System.out.println("** Calcular Precio de Producto:                                            **");
+        System.out.println("** Permite validar cuál es el producto con mayor valor.                    **");
+        System.out.println("**                                                                         **");
+
+        List<Producto> productoCaro = Inventario.lecturaProduct();
+
+        Producto costoso = null;
+        double valorCostoso = Double.MIN_VALUE;
+        for (Producto producto: productoCaro){
+            if (producto.getPrecio() > valorCostoso){
+                valorCostoso = producto.getPrecio();
+               costoso = producto;
+            }
+        }
+         if(costoso != null) {
+             System.out.println("**  El producto mas costoso en la tieda es \uD83D\uDC49: " + costoso.getNombreProducto() +                 "                   **");
+             System.out.println("**  con un valor de $ "  + valorCostoso +         "                                               **");
+        }
+        System.out.println("*****************************************************************************");
+    }
+
+
 }
 
 

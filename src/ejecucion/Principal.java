@@ -101,16 +101,7 @@ public class Principal {
  */
                 // Opcion menu Producto más caro
                 case 7:
-                    System.out.println("*****************************************************************************");
-                    System.out.println("**                      Producto más caro                                  **");
-                    System.out.println("*****************************************************************************");
-                    System.out.println("** Calcular Precio de Producto:                                            **");
-                    System.out.println("** Permite validar cuál es el producto con mayor valor.                    **");
-                    System.out.println("**                                                                         **");
-                    System.out.println("*****************************************************************************");
-                    System.out.println("**      El producto o los productos mas caros son:                         **");
-                    System.out.println("**                                                                         **");
-                    System.out.println("*****************************************************************************");
+                    Inventario.productoCostoso();
                     System.out.println("\uD83D\uDE0E Para continuar presione la tecla enter \uD83D\uDDB1\uFE0F \n ");
                     scannerMenu.nextLine(); // Captura el salto de línea restante
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
