@@ -171,6 +171,8 @@ public class Inventario {
         try {
             Scanner scanId = new Scanner(System.in);
             System.out.println("*****************************************************************************");
+            System.out.println("**                    Eliminar Producto                                    **");
+            System.out.println("*****************************************************************************");
             System.out.println("**              \uD83D\uDC49   Ingrese el ID del producto a eliminar:                **");
             int productoEliminar = Integer.parseInt(scanId.nextLine());
             System.out.println("**               Se elimino con exito el registro                          **");
@@ -197,15 +199,16 @@ public class Inventario {
     }
 
     // buscar Categoria opción 4 del menú
-
     public static void buscarCategoria(){
-        List<Producto> listaProductos = Inventario.lecturaProduct();
+
         try{
             Scanner scanner = new Scanner(System.in);
             System.out.println("*****************************************************************************");
             System.out.println("**                    Buscar por categoría                                 **");
             System.out.println("*****************************************************************************");
-            System.out.println("**               el producto  que va a Buscar  es                          **");
+            System.out.println("**    En la tienda se encuentran estas categorias :                        **");
+            System.out.println("**    Verdura, Bebidas, Confites, Frios, Mercado, Aseo Personal            **");
+            System.out.println("**              \uD83D\uDC49   Diligencie la que va a buscar :                      **");
 
             String categoria = scanner.nextLine();
             List<Producto> productos1 = Inventario.lecturaProduct();
@@ -217,18 +220,69 @@ public class Inventario {
                }
             }
             if  (!productosXCategoria.isEmpty()) {
-                System.out.println("Id\tNombreProducto\tCategoria\tPrecio\tCantidad Disponible");
+                System.out.println("** Esto es lo que hay en la tienda :                                      **");
+                System.out.println(" Id\tProducto\tCategoria\tPrecio\tCantidad Disponible ");
                 for (Producto producto : productosXCategoria ) {
                     System.out.println(producto.getIdProducto() + "\t\t\t\t" + producto.getNombreProducto() + "\t\t\t\t" + producto.getCategoria() + "\t\t\t\t" + producto.getPrecio() + "\t\t\t" + producto.getCantidadDisponible());
                     System.out.println("*****************************************************************************");
                 }
             } else {
-                System.out.println("No existen productos asociados a esa categoria");
+                System.out.println("**      No existen productos asociados a esa categoria                      **");
             }
         } catch (NumberFormatException e) {
             System.out.println("Intenta nuevamente ");
         }
+    }
 
+    // Generar reporte opción 5 del menú
+
+    public static void generarReporte(){
+
+        final String reporte;
+        reporte = "D:\\workspaceintellij2024\\ProyectoFinalTienda\\reporte_inventario.txt";
+
+        System.out.println("*****************************************************************************");
+        System.out.println("**                         Generar reporte                                 **");
+        System.out.println("*****************************************************************************");
+        System.out.println("** Reporte de Inventario: Genera un archivo de texto (reporte_inventario.  **");
+        System.out.println("** con un resumen del inventario, incluyendo el valor total del inventario **");
+        System.out.println("** (suma de precios * cantidades).                                         **");
+        System.out.println("*****************************************************************************");
+        System.out.println("**                 Aca esta tu reporte                                     **");
+        System.out.println("**                                                                         **");
+
+        String titulo = "Id Producto\tNombre Producto\tCategoria\tPrecio\tCantidad Disponible\tValor Total Producto";
+        List<Producto> listaProductos = Inventario.lecturaProduct();
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(reporte))) {
+            double valor = 0;
+
+            // Escribir una línea por cada producto en el ArrayList
+            writer.write(titulo);
+            writer.newLine();
+
+            for (Producto producto : listaProductos) {
+                double valorProducto = producto.getPrecio() * producto.getCantidadDisponible();
+                valor += valorProducto;
+
+                writer.write(String.join("\t\t", String.valueOf(producto.getIdProducto()),
+                        producto.getNombreProducto(), producto.getCategoria(),
+                        String.valueOf(producto.getPrecio()), String.valueOf(producto.getCantidadDisponible()), String.valueOf(valorProducto)));
+                writer.newLine();
+
+            }
+            writer.newLine();
+            writer.newLine();
+            writer.write("Valor total del inventario en la tienda es \uD83D\uDC49 $  " + valor);
+
+            System.out.println("**          \uD83D\uDC49   El reporte se encuentra en la ruta:                       **");
+            System.out.println("**   " + reporte +                                                          "   **");
+
+            System.out.println("**                      Archivo creado con éxito.                          **");
+            System.out.println("*****************************************************************************");
+        } catch (IOException e) {
+            //throw new RuntimeException(e);
+            System.err.println("Error al escribir en el archivo: " + e.getMessage());
+        }
     }
 }
 

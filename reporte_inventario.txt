@@ -1,0 +1,6 @@
+Id Producto	Nombre Producto	Categoria	Precio	Cantidad Disponible	Valor Total Producto
+2		tomate		verdura		800.0		29		23200.0
+3		gaseosa		bebidas		5100.0		34		173400.0
+
+
+Valor total del inventario en la tienda es 👉 $196600.0

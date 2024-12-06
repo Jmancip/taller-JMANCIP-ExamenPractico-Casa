@@ -73,39 +73,15 @@ public class Principal {
 
                     break;
 
-/*
                 // Opcion menu Generar reporte
-                /*case 5:
-                    System.out.println("*****************************************************************************");
-                    System.out.println("**                         Generar reporte                                 **");
-                    System.out.println("*****************************************************************************");
-                    System.out.println("** Reporte de Inventario: Genera un archivo de texto (reporte_inventario.  **");
-                    System.out.println("** con un resumen del inventario, incluyendo el valor total del inventario **");
-                    System.out.println("** (suma de precios * cantidades).                                         **");
-                    System.out.println("*****************************************************************************");
-                    System.out.println("**              Aca esta tu reporte                                        **");
-                    System.out.println("**                                                                         **");
-                    //Clase   Como extraer datos
-
-                    try (FileReader fr = new FileReader(ruta + nombreArchivo)) {
-                        //Clase para leer el contenido
-                        BufferedReader br = new BufferedReader(fr);
-                        String linea;
-
-                        while ((linea = br.readLine()) != null) {
-                            System.out.println(linea);
-                        }
-                    } catch (Exception e) {
-                        throw new RuntimeException(e);
-                    }
-                    System.out.println("**                                                                         **");
-                    System.out.println("*****************************************************************************");
+                case 5:
+                    Inventario.generarReporte();
                     System.out.println("\uD83D\uDE0E Para continuar presione la tecla enter \uD83D\uDDB1\uFE0F \n ");
                     scannerMenu.nextLine(); // Captura el salto de línea restante
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
                     break;
-*/
 
+/*
                 // Opcion menu Cantidad de productos por categoria
                 case 6:
                     System.out.println("*****************************************************************************");
@@ -120,6 +96,9 @@ public class Principal {
                     scannerMenu.nextLine(); // Captura el salto de línea restante
                     scannerMenu.nextLine(); // Espera a que el usuario presione Enter
                     break;
+
+
+ */
                 // Opcion menu Producto más caro
                 case 7:
                     System.out.println("*****************************************************************************");
